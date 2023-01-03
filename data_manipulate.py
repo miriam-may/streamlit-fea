@@ -75,8 +75,6 @@ def addCol(col_name, originalFile, newcolfile):
     elif counter == 5:
         current_col = eleven_coord
     else:
-        #return False
-
         st.warning('Error - no columns available. Please exit program and inform support')
         return
        
@@ -93,8 +91,7 @@ def addCol(col_name, originalFile, newcolfile):
     #turn the new column into the text file into an array
     #then write the data of the new column onto the end of every node 
     #line until there are no lines in the new column left
-    #with open(os.path.join('txtdir', RESIDUAL_STRESS_TXT), 'w') as newOrig:
-       # with open(os.path.join('txtdir',NEW_COLUMN_TXT), 'r') as newCol:
+    
     with open('final_file.txt', 'w') as newOrig:
         i=0
         newCol_arr = NEW_COLUMN_TXT.split('\n')
@@ -109,6 +106,6 @@ def addCol(col_name, originalFile, newcolfile):
             else:
                 newOrig.write(line + '\n')
         current_col.values=newCol_arr
-       # newCol.close()
+       
     newOrig.close()
     st.success('Column succesfully added to {}'.format(RESIDUAL_STRESS_TXT))

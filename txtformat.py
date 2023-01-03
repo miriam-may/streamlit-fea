@@ -5,22 +5,22 @@ import streamlit as st
 def delim(file): 
        
     
-        #read the selected file and apply it to variable elms
-    elms = file.decode('utf-8')
-        #replace the applicable parts of variable elms with the delimiters
-    elms = elms.replace('e+002', 'e+002, ')
-    elms = elms.replace('e+003', 'e+003, ')
-    elms = elms.replace('e+004', 'e+004, ')
-    elms = elms.replace('e+005', 'e+005, ')
-    elms = elms.replace('e+006', 'e+006, ')
-    elms = elms.replace('e+007', 'e+007, ')
-    elms = elms.replace('e+008', 'e+008, ')
-    elms = elms.replace('e+009', 'e+009, ')
+        #read the selected file and write it to variable elems as a string
+    elems = file.decode('utf-8')
+        #replace the applicable parts of variable elems with the delimiters
+    elems = elems.replace('e+002', 'e+002, ')
+    elems = elems.replace('e+003', 'e+003, ')
+    elems = elems.replace('e+004', 'e+004, ')
+    elems = elems.replace('e+005', 'e+005, ')
+    elems = elems.replace('e+006', 'e+006, ')
+    elems = elems.replace('e+007', 'e+007, ')
+    elems = elems.replace('e+008', 'e+008, ')
+    elems = elems.replace('e+009', 'e+009, ')
    
 
     with open('final_file.txt', 'w') as magma_file:
-        #write a file with the stored, altered text in variable elms
-        magma_file.write(elms)
+        #write a file with the stored, altered text in variable elems
+        magma_file.write(elems)
     #close the writeable file
     magma_file.close()
     st.success('Delimeters succesfully added')
